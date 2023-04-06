@@ -6,6 +6,9 @@
 - name : Download frontend content
    ansible.builtin.get_url:
      url: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-     dest: /tmp/frontend.zip     
+     dest: /tmp/frontend.zip   
+
+
+######################     
      
       
