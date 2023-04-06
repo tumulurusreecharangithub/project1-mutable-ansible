@@ -1,6 +1,6 @@
 - name: install nginix
   ansible.builtin.yum:
-    name: ngnix
+    name: nginx
     state: installed
 
 - name: Download frontend content
