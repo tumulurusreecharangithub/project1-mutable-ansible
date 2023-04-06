@@ -2,8 +2,8 @@
   ansible.builtin.yum:
    name: nginx
    state: installed
-# Download a file and move it to a location
-- Name : Download frontend content
+
+- name : Download frontend content
    ansible.builtin.get_url:
      url: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
      dest: /tmp/frontend.zip     
