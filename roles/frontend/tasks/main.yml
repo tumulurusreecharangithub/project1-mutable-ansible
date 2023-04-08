@@ -1,4 +1,8 @@
-- name: install nginix
+- name: install nginx
   ansible.builtin.yum:
-    name: ngnix
+    name: nginx
     state: installed
+- name: Download frontend copy
+  ansible.builtin.get_url:
+  url: "https://github.com/roboshop-devops-project/frontend/rachive/main.zip"
+  dest: /tmp/fromtend.zip
