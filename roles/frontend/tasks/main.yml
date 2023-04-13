@@ -3,7 +3,13 @@
     name: nginx
     state: installed
 
-- name: Download frontend content
-  ansible.builtin.get_url:
-    url: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-    dest: /tmp/frontend.zip
+- name: Remove old HTML Content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    status: absent
+
+- name: Download frontend content and extract it
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
